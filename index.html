@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <style>
+        #myProgress {
+          width: 100%;
+          background-color: #ddd;
+        }
+        
+        #myBar {
+          width: 1%;
+          height: 30px;
+          background-color: #04AA6D;
+          transition: width .2s;
+        }
+        </style>
+    
+        
+       
+      
+        
+       
+</head>
+<body>
+    <div id="myProgress">
+        <div id="myBar"></div>
+      </div>
+      
+    
+    <div id="container">
+        <img src="location_2020/_DSC1307.jpg" alt="">
+        <img src="location_2020/_DSC1634-2_.jpg" alt="">
+        <img src="location_2020/BEAUS_GolfTeam_0128edit.jpg" alt="">
+        <img src="location_2020/bird.jpg" alt="">
+        <img src="location_2020/DSC_0030_2.jpg" alt="">
+        <img src="location_2020/DSC_1582_MJ_05_14.jpg" alt="">
+        <img src="location_2020/DSC_8711crop.jpg" alt="">
+        <img src="location_2020/ECUM_RobinTutor-9882.jpg" alt="">
+        <img src="location_2020/ECUM_ScottGremillion-6261.jpg" alt="">
+        <img src="location_2020/G2NK8022_editedBM.jpg" alt="">
+        <img src="location_2020/INT_ECU_IsaacMorton_3.jpg" alt="">
+        <img src="location_2020/SPIRIT_Bike_DSC_0232.jpg" alt="">
+        <img src="location_2020/SRMC_DoctorsWalking_2060_size.jpg" alt="">
+        <img src="location_2020/SRMC_Oct28_2623_edit_2-19-14.jpg" alt="">
+        <img src="location_2020/Sunset-&-tree.jpg" alt="">
+        <img src="location_2020/shep15_editedBM.jpg" alt="">
+      
+    </div>
+    <script>
+       
+        var imgLoad = imagesLoaded('#container');
+        let imgsTotal = imgLoad.images.length; // 16
+
+        let step = 100 / imgsTotal;
+        let complete = 0;
+        console.log(step);       
+        
+        imgLoad.on( 'progress', function( instance, image ) {
+
+        var result = image.isLoaded ? 'loaded' : 'broken';
+        console.log( 'image is ' + result + ' for ' + image.img.src );
+        complete += step;    
+      
+      
+        let elem = document.getElementById('myBar');
+
+        elem.style.width = complete + "%";
+
+
+
+
+});
+
+
+      /*  function move(i) {
+         
+           
+            var elem = document.getElementById("myBar");
+            var width = i;
+            var id = setInterval(frame, 10);
+            function frame() {
+              if (width >= 100) {
+                clearInterval(id);
+                i = 0;
+              } else {
+                width++;
+                elem.style.width = width + "%";
+              }
+           
+          }
+        }*/
+
+    </script>
+</body>
+</html>
